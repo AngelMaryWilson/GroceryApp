@@ -1,0 +1,11 @@
+<suite name="GrocerApp">
+	
+	<test name="GroceryAppTestSuite">
+		
+		<classes>
+			
+			<class name="groceryTestcases.LoginTestCase"> </class>
+			
+		</classes>
+	</test>
+</suite>

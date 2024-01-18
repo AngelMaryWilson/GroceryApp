@@ -1,0 +1,14 @@
+<suite name="Payroll">
+
+	<test name="groupingTest">
+		<groups>
+			<run>
+				<exclude name="regression"></exclude>
+				<exclude name="critical"></exclude>
+			</run>
+		</groups>
+		<classes>
+			<class name="groceryTestcases.ManageProductsTestCase"></class>
+		</classes>
+	</test>
+</suite>
