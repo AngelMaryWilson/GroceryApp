@@ -1,11 +1,25 @@
 <suite name="GrocerApp">
 	
-	<test name="GroceryAppTestSuite">
-		
+	
+	
+	<test name="GroceryAppHomePage">
 		<classes>
-			
-			<class name="groceryTestcases.LoginTestCase"> </class>
-			
+			<class name="groceryTestcases.HomePageTestCases"></class>
+		</classes>
+	</test>
+	<test name="GroceryAppLoginPage">
+		<classes>
+			<class name="groceryTestcases.LoginPagesTestData"></class>
+		</classes>
+	</test>
+	<test name="GroceryAppManageProduct">
+		<classes>
+			<class name="groceryTestcases.ManageProductPageTestCases"></class>
+		</classes>
+	</test>
+	<test name="GroceryAppPushNotification">
+		<classes>
+			<class name="groceryTestcases.PushNotificationTestCases"></class>
 		</classes>
 	</test>
 </suite>

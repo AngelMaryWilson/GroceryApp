@@ -4,17 +4,16 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import elementRepository.HomePage;
-import elementRepository.LoginPage;
+import elementRepository.LoginPages;
 
 public class HomePageTestCases extends BaseClass {
-  @Test
+  @Test 
   public void verifyTheUserInHomePage() {
-	  LoginPage ul =new LoginPage(driver);
+	  LoginPages ul =new LoginPages(driver);
 	  ul.enterUser("admin");
 	  ul.enterPassword("admin");
 	  ul.loginButton();
-	  
-	  
+	 
 	  HomePage hp = new HomePage(driver);
 	  String actual = hp.userDetails();
 	  String expected ="Admin";

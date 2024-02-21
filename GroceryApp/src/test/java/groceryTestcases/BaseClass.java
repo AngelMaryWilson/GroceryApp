@@ -1,10 +1,5 @@
 package groceryTestcases;
 
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Parameters;
-
-import utilities.ScreenShotCapture;
-
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
@@ -15,6 +10,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
+
+import utilities.ScreenShotCapture;
 
 public class BaseClass {
 	
@@ -31,7 +30,23 @@ public class BaseClass {
   }
   
 	
-  @BeforeMethod 
+	@BeforeMethod(alwaysRun = true)
+	public void beforeMethod() throws IOException {
+        callPropertyValues();
+		driver = new ChromeDriver();
+		driver.get(property.getProperty("BaseUrl"));
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofMillis(10000));
+
+	}
+
+	@AfterMethod(alwaysRun = true)
+	public void afterMethod() {
+
+		driver.close();
+	}
+/*
+  @BeforeMethod (alwaysRun = true)
   @Parameters("browser")
   public void beforeMethod(String browser) throws IOException {
 	  
@@ -62,5 +77,5 @@ public class BaseClass {
 	  driver.close();
 	  
   }
-  
+  */
 }
